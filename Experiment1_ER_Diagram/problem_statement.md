@@ -22,31 +22,26 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 - Payments tracked for memberships and sessions.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_fitness.png)
+ <img width="1195" height="552" alt="image" src="https://github.com/user-attachments/assets/8b28d752-93ff-4b23-ba87-5b21fa990a9c" />
+
 
 ### Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
 |--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+|  member   |      m_name, M_ID(PK), M_Age, M_Gender              |       |
+|   trainer     |     T_Name, T_ID(PK), T_specialization               |       |
+|   program     |     P_ID(PK), P_Name               |       |
 
 ### Relationships and Constraints
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+|    Training          |    program       |      Member & Trainer        |   Trainer trains the member according to the program   |
 
 ### Assumptions
-- 
-- 
-- 
+- Trainer chooses the program thats right for the member
+- member will pay the fee required for the program
 
 ---
 
@@ -64,31 +59,30 @@ The Central Library wants to manage book lending and cultural events.
 - Overdue fines apply for late returns.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_library.png)
+<img width="975" height="606" alt="image" src="https://github.com/user-attachments/assets/f5de0caf-e14a-4faa-93c3-8ebfb86b4cc3" />
+
 
 ### Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
 |--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+|    Room    |  Room_ID(PK),Room_name, Room_No                  |       |
+|  Event      |       Event_ID(PK), Event_Speaker,             |       |
+|  Book      |        Book_ID(PK), Book_Name, Book_Price            |       |
+|  Member      |       Member_ID(PK), Member_Name             |       |
+|   Speaker     |        Speaker_ID(PK), Speaker_info            |       |
 
 ### Relationships and Constraints
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+|      Lending        |  Members lend the book from the library          |     Member, book, speaker          |       |
+|      Buying        |  Members buy the book from the library          |    Member, Book, Speaker           |       |
+|       Reading       |   Speaker reading the book         |           Speaker & Book    |       |
 
 ### Assumptions
-- 
-- 
-- 
+- Speaker lends book to member
+- Member buy the book from library
 
 ---
 
@@ -106,31 +100,28 @@ A popular restaurant wants to manage reservations, orders, and billing.
 - Waiters assigned to serve reservations.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
+<img width="879" height="889" alt="image" src="https://github.com/user-attachments/assets/8a1e6458-4655-446c-85cd-6bea4dd54deb" />
+
 
 ### Entities and Attributes
 
 | Entity | Attributes (PK, FK) | Notes |
 |--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| Table       |   Table_ID(PK), Table_No, Table_capacity                 |       |
+|  Waiter      |   Waiter_ID(PK), Waiter_info, Waiter_contact                 |       |
+|   Dish     |    Dish_ID(PK), price, Category                |       |
 
 ### Relationships and Constraints
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
+|      ordering        |       customer orders food to the table     |   waiter, customer, order, dish            |       |
+|      Billing        |   customer Buys the dish after ordering         |   customer, cashier, bill            |       |
 |              |            |               |       |
 
 ### Assumptions
-- 
-- 
-- 
+- Customer order the food(DISH) from the waiter.
+- Bill generated for the customer for thier respective dish
 
 ---
 

@@ -1,4 +1,5 @@
 # ER Diagram Workshop – Submission Template
+## NAME - SAJIN PRANEETH S R
 
 ## Objective
 To understand and apply ER modeling concepts by creating ER diagrams for real-world applications.

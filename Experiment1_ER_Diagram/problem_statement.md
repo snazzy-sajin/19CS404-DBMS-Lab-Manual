@@ -27,10 +27,12 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### Entities and Attributes
 
+
 | Entity | Attributes (PK, FK) | Notes |
 |--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
+|   Members     |    M_ID (PK), M_Name, M_Gender, M_StartDate, MembershipType                | Membership type was mentioned in requirements but missing in diagram → add it.      |
+|Program|  P_ID (PK), P_Name                  |     Represents fitness programs (Yoga, Zumba, etc.).  |
+|  Trainer      |         T_ID (PK), T_Name, T_Specialization           |  Trainers may specialize in certain areas.     |
 |        |                    |       |
 |        |                    |       |
 |        |                    |       |
